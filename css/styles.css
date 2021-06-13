@@ -1,8 +1,128 @@
-/* Custom properties */
+/* custom properties */
 :root {
     --main-font: "Kumbh Sans", sans-serif;
     --body-copy: 12px;
 
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    --light-grayish-blue: hsl(240, 5%, 91%);
+
     --soft-violet: hsl(273, 75%, 66%);
     --soft-blue: hsl(240, 73%, 65%);
+}
+
+html {
+    font-size: var(--body-copy);
+    font-family: var(--main-font);
+    line-height: 1.6;
+}
+
+body {
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    min-height: 100vh; /* this is needed to avoid the gradient being repeated after the body */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: white;
+    border-radius: 23px;
+    box-shadow: 0px 25px 15px rgba(0, 0, 0, 0.2);
+    width: 87vw;
+    min-height: 63vh;
+    margin-top: 15vh;
+    position: relative;
+}
+
+img {
+    margin: auto;
+}
+
+.first {
+    position: absolute;
+    left: calc(50% - 16px);
+    transform: translate(-50%, -55%);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--very-dark-desaturated-blue);
+}
+
+details {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    margin: 0 8%;
+}
+
+summary {
+    font-size: 1.2rem;
+    color: var(--very-dark-grayish-blue);
+
+    cursor: pointer;
+    list-style: none;
+    /* I wish I could use flex here, but it doesn't work on Safari */
+    /* display: flex;
+    justify-content: space-between; */
+    position: relative;
+
+    margin: 4% 0;
+
+    /* this is necessary because Safari adds an outline by default*/
+    outline: 0;
+}
+
+/* this is necessary to remove the triangles on Safari */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:hover {
+    color: var(--soft-red);
+}
+
+details[open] summary {
+    font-weight: 700;
+}
+
+/* arrow icon */
+summary::after {
+    content: url("../images/icon-arrow-down.svg");
+    position: absolute;
+    right: 0;
+}
+details[open] summary::after {
+    transform: rotate(0.5turn);
+}
+
+summary ~ * {
+    color: var(--dark-grayish-blue);
+
+    /* opening animation */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+details[open] summary ~ * {
+    /* opening animation */
+    opacity: 1;
+}
+
+footer {
+    margin-top: 20%;
+    color: rgb(185, 183, 216);
+}
+
+footer a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
