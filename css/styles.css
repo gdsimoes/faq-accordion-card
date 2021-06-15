@@ -35,19 +35,29 @@ main {
     box-shadow: 0px 25px 15px rgba(0, 0, 0, 0.2);
     width: 87vw;
     /* min-height: 510px; */
-    padding-bottom: 45px;
+
     margin-top: 140px;
     position: relative;
+}
+
+#faq {
+    padding-bottom: 45px;
+    margin: auto;
 }
 
 img {
     margin: auto;
 }
 
-.first {
+#woman {
     position: absolute;
     left: calc(50% - 16px);
     transform: translate(-50%, -55%);
+}
+
+/* The box image should only be shown in the desktop */
+#box {
+    display: none;
 }
 
 h1 {
@@ -62,7 +72,7 @@ details {
 }
 
 summary {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--very-dark-grayish-blue);
 
     cursor: pointer;
@@ -103,6 +113,7 @@ details[open] summary::after {
 
 summary ~ * {
     color: var(--dark-grayish-blue);
+    margin-right: 20px;
 
     /* opening animation */
     opacity: 0;
@@ -129,4 +140,72 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+@media screen and (min-width: 1000px) {
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        /* need to change */
+        max-width: 920px;
+        height: 510px;
+    }
+
+    /* main > * { */
+    #faq {
+        /* need to change */
+        /* padding-right: 60px; */
+        margin: auto;
+        width: 350px;
+    }
+
+    h1 {
+        text-align: left;
+    }
+
+    /* arrow icon */
+    summary::after {
+        right: 15px;
+    }
+
+    details {
+        margin: 0;
+    }
+
+    .background {
+        width: 42%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        /* need to change */
+        /* height: 510px; */
+    }
+
+    #box {
+        display: block;
+        position: absolute;
+        left: 0;
+        transform: translateX(-49%);
+        top: 41%;
+        z-index: 2;
+    }
+
+    #woman {
+        left: unset;
+        max-width: unset;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    #pattern {
+        max-width: unset;
+        position: absolute;
+        right: 0;
+        bottom: -28%;
+    }
 }
