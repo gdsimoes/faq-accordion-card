@@ -128,13 +128,14 @@ details[open] summary ~ * {
 footer {
     /* margin-top: 50px; */
     /* margin-bottom: 0px; */
-    color: rgba(255, 255, 255, 0.5);
+    color: #efefef;
     font-size: 11px;
     text-align: center;
 }
 
 footer a {
-    color: rgba(255, 255, 255, 0.8);
+    color: inherit;
+    font-weight: 700;
     text-decoration: none;
 }
 
