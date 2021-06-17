@@ -23,6 +23,8 @@ html {
 body {
     background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
     min-height: 100vh; /* this is needed to avoid the gradient being repeated after the body */
+
+    /* center everything */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -34,9 +36,9 @@ main {
     border-radius: 23px;
     box-shadow: 0px 25px 15px -2px rgba(0, 0, 0, 0.2);
     width: 87vw;
-    /* min-height: 510px; */
 
     margin-top: 140px;
+    /* necessary to position the box */
     position: relative;
 }
 
@@ -45,12 +47,13 @@ main {
     margin: auto;
 }
 
-img {
+#pattern {
     margin: auto;
 }
 
 #woman {
     position: absolute;
+    /* The image have 16px of empty space on the left */
     left: calc(50% - 16px);
     transform: translate(-50%, -55%);
 }
@@ -114,15 +117,7 @@ details[open] summary::after {
 summary ~ * {
     color: var(--dark-grayish-blue);
     margin-right: 20px;
-
-    /* opening animation */
-    /* opacity: 0;
-    transition: opacity 0.3s; */
 }
-
-/* details[open] summary ~ * {
-    opacity: 1;
-} */
 
 /* I wanted to use transitions as the syntax is simpler
     but it wasn't working on Safari and Chrome. */
@@ -140,8 +135,7 @@ details[open] summary ~ * {
 }
 
 footer {
-    /* margin-top: 50px; */
-    /* margin-bottom: 0px; */
+    margin-top: 50px;
     color: #efefef;
     font-size: 11px;
     text-align: center;
@@ -163,16 +157,11 @@ footer a:hover {
         flex-direction: row;
         justify-content: start;
         align-items: center;
-        /* need to change */
         max-width: 920px;
         height: 510px;
-        /* height: 1px; */
-        /* overflow: scroll; */
     }
 
     #faq {
-        /* need to change */
-        /* padding-right: 60px; */
         margin: auto;
         margin-top: 70px;
         width: 350px;
@@ -200,9 +189,6 @@ footer a:hover {
         min-height: 510px;
         position: relative;
         overflow: hidden;
-
-        /* need to change */
-        /* height: 510px; */
     }
 
     #box {
