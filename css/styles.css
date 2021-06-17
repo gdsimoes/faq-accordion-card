@@ -116,13 +116,27 @@ summary ~ * {
     margin-right: 20px;
 
     /* opening animation */
-    opacity: 0;
-    transition: opacity 0.3s;
+    /* opacity: 0;
+    transition: opacity 0.3s; */
 }
 
-details[open] summary ~ * {
-    /* opening animation */
+/* details[open] summary ~ * {
     opacity: 1;
+} */
+
+/* I wanted to use transitions as the syntax is simpler
+    but it wasn't working on Safari and Chrome. */
+details[open] summary ~ * {
+    animation: open 0.3s ease-in-out;
+}
+
+@keyframes open {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 footer {
