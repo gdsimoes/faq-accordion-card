@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://github.com/gdsimoes/faq-accordion-card)
--   Live Site URL: [Add live site URL here](https://gdsimoes.github.io/faq-accordion-card)
+-   Solution URL: <https://github.com/gdsimoes/faq-accordion-card>
+-   Live Site URL: <https://gdsimoes.github.io/faq-accordion-card>
 
 ## My process
 
